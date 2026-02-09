@@ -5,6 +5,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+import time
+
 
 def extract_course(url):
     print("Done!")
@@ -12,7 +14,7 @@ def extract_course(url):
     footer = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.CSS_SELECTOR, "footer"))
     )
-
+    time.sleep(1)
     html_before_footer = driver.execute_script(
         """
     var footer = arguments[0];
